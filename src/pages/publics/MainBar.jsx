@@ -158,7 +158,7 @@ function MainBar() {
             <p className='text-2xl sm:text-3xl font-semibold p-8 sm:p-10 text-[#014d40]'>
                 Featured Products
             </p>
-            <div className='flex p-8 gap-5 overflow-x-auto scroll-smooth snap-x snap-mandatory'>
+            <div className='flex p-8 gap-5 overflow-x-auto scroll-smooth snap-x snap-mandatory hide'>
                 {product.map((pro) => (
                     <div 
                         key={pro._id ?? pro.id} 
@@ -207,7 +207,7 @@ function MainBar() {
                         Find the perfect pieces to transform your space
                     </p>
                   
-                    <div className="flex w-full max-w-2xl mx-auto mb-6">
+                    <div className="flex w-full max-w-2xl mx-auto mb-6 ">
                         <input
                             type="text"
                             placeholder="Search sofas, lighting, decor..."
@@ -232,7 +232,7 @@ function MainBar() {
                     </div>
 
                    
-                    <div   className="flex justify-center flex-wrap gap-3">
+                    <div   className="flex justify-center flex-wrap gap-3 ">
                         {['Sofas', 'Lighting', 'Shelf', 'Chair', 'Clock', ].map((category) => (
                             <button
                                 key={category}
@@ -293,7 +293,7 @@ function MainBar() {
                     Discover beautiful home decor ideas
                 </p>
                 
-                <div className='flex w-full overflow-x-auto scroll-smooth snap-x snap-mandatory p-4 gap-8'>
+                <div className='flex w-full overflow-x-auto scroll-smooth snap-x snap-mandatory p-4 gap-8 hide'>
                     {category.map((cat) => (
                         <div 
                             onClick={()=>navigate(`/user/category/${cat._id}`)}

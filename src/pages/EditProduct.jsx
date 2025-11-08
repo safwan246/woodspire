@@ -15,6 +15,7 @@ const AddProduct = () => {
         const [category,SetCategory] = useState('')
         const [Categories,SetCategories] = useState([])
         const [image ,Setimage] = useState(null)
+        const [currentImageUrl, setCurrentImageUrl] = useState('');
 
 
 
@@ -36,7 +37,9 @@ const AddProduct = () => {
         },[])
 
     const handleFileChange = (e) => {
-        Setimage(e.target.files[0]); 
+        Setimage(e.target.files[0]);
+        
+         
     };
     
 
@@ -58,6 +61,8 @@ const AddProduct = () => {
       try{
        const data = await api.put(`/admin/products/${id}`, formData,{
         headers:{"Content-Type":"multipart/form-data"},
+
+        
 
       });
       console.log(formData);

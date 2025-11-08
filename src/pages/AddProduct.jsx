@@ -33,6 +33,7 @@ const AddProduct = () => {
 
     const handleFileChange = (e)=>{
         Setimage(e.target.files[0])
+        console.log(e);
     };
  
     const handleSubmit = async (e)=>{

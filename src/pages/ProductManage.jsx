@@ -111,7 +111,7 @@ const ProductManage = () => {
                                     <td className="p-2 border text-center">{prod._id}</td>
                                     <td className="p-2 border">{prod.name}</td>
                                     <td className="p-2 border font-semibold text-green-700">₹{prod.price}</td>
-                                    <td className="p-2 border">{prod.category?.name}</td>
+                                    <td className="p-2 border">{prod.category}</td>
                                     <td className="p-2 border text-center">
                                         {prod.image ? (
                                             <img

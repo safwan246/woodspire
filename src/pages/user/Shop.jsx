@@ -30,6 +30,13 @@ function Shop() {
     const [product,setProduct ] = useState([])
     const navigate = useNavigate()
 
+    // -------------------- ADDED (pagination state) --------------------
+    const [page, setPage] = useState(1);
+    const ITEMS_PER_PAGE = 8; // tweak per your UI
+    const totalPages = Math.max(1, Math.ceil(product.length / ITEMS_PER_PAGE));
+    const start = (page - 1) * ITEMS_PER_PAGE;
+    const end = start + ITEMS_PER_PAGE;
+    // ------------------------------------------------------------------
 
     const handleProduct = async () =>{
 
@@ -92,7 +99,7 @@ function Shop() {
             <div className="w-full h-16 bg-[#02473b] flex items-center justify-between px-8 fixed top-0 z-10 shadow-lg shadow-black/50">
                 <h3 className="text-white font-sans font-bold text-2xl">Woodspire</h3>
                 
-               
+                
                 <div className='flex items-center gap-4'>
                   
                     <button className='w-20 h-9 rounded-xl text-md text-white bg-emerald-700 hover:bg-emerald-600 shadow-xl hover:scale-105 duration-300'>
@@ -102,7 +109,7 @@ function Shop() {
             </div>
            
             <div className="pt-28 p-8 "> 
-                <div className="flex flex-wrap gap-9 justify-items-center ">
+                <div className="flex flex-wrap gap-9 justify-center items-center  ">
                     
                   
                     {product === null ? (
@@ -110,7 +117,8 @@ function Shop() {
                     ) : product.length === 0 ? (
                         <p className='text-white text-xl'>No categories found or failed to load data.</p> 
                     ) : (
-                        product.map((pro) => (
+                        // -------- CHANGED: added .slice(start, end) only ----------
+                        product.slice(start, end).map((pro) => (
                             <ProductCard  
                                 key={pro._id} 
                                 id={pro._id}
@@ -119,8 +127,44 @@ function Shop() {
                                 image={pro.image}
                             />
                         ))
+                        // -----------------------------------------------------------
                     )}
                 </div>
+
+                {/* -------------------- ADDED: Pagination controls -------------------- */}
+                {product && product.length > 0 && (
+                  <div className="mt-10 flex items-center justify-center gap-2 select-none">
+                    <button
+                      onClick={() => setPage(p => Math.max(1, p - 1))}
+                      disabled={page === 1}
+                      className={`px-3 py-1 rounded-lg text-sm border ${page === 1 ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'} bg-white text-[#02473b] border-[#02473b] hover:bg-[#02473b]/10`}
+                    >
+                      ‹ Prev
+                    </button>
+
+                    {Array.from({ length: totalPages }).map((_, i) => {
+                      const num = i + 1;
+                      return (
+                        <button
+                          key={num}
+                          onClick={() => setPage(num)}
+                          className={`px-3 py-1 rounded-lg text-sm border ${num === page ? 'bg-[#02473b] text-white border-[#02473b]' : 'bg-white text-[#02473b] border-[#02473b] hover:bg-[#02473b]/10'}`}
+                        >
+                          {num}
+                        </button>
+                      );
+                    })}
+
+                    <button
+                      onClick={() => setPage(p => Math.min(totalPages, p + 1))}
+                      disabled={page === totalPages}
+                      className={`px-3 py-1 rounded-lg text-sm border ${page === totalPages ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'} bg-white text-[#02473b] border-[#02473b] hover:bg-[#02473b]/10`}
+                    >
+                      Next ›
+                    </button>
+                  </div>
+                )}
+                {/* -------------------------------------------------------------------- */}
             </div>
         </div>
               <div className="bg-[#141d2f] text-white">
@@ -153,7 +197,7 @@ function Shop() {
                 </div>
         
          
-                <div className="grid grid-cols-1 sm:grid-cols-2 col-span-1 md:col-span-2 gap-12">
+                <div className=" grid grid-cols-1 sm:grid-cols-2 col-span-1 md:col-span-2 gap-12">
                     
                  
                     <div className='space-y-4'>

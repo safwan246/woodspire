@@ -71,12 +71,12 @@ const Usercategory = () => {
                                 key={p._id}
                                 onClick={() => { navigate(`/products/${p._id}`) }}
                                 className="bg-white rounded-2xl shadow-md hover:shadow-xl 
-           transition-transform duration-300 hover:scale-105 p-6 flex flex-col items-center text-center cursor-pointer" // Added cursor-pointer
+           transition-transform duration-300 hover:scale-105 p-6 flex flex-col items-center text-center cursor-pointer" // Added cursor-pointe
                             >
                                 <img
                                     src={`http://localhost:3033/uploads/${p.image}`}
                                     alt={p.name}
-                                    className="w-48 h-48 object-cover rounded-xl mb-4 border border-gray-100" // Added minor styling
+                                    className="w-48 h-48 object-cover rounded-xl mb-4 border border-gray-100" 
                                 />
                                 <h3 className="text-xl font-semibold text-gray-800">
                                     {p.name}
