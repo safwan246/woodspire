@@ -1,16 +1,79 @@
-# React + Vite
+🌲 Woodspire
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Woodspire — my first e-commerce website for home furniture (chairs, sofas, tables, etc.).
+Built using the MERN stack. This project taught me a lot about building full-stack apps: product CRUD, user auth, carts, payments (placeholder), responsive UI and deployment.
 
-Currently, two official plugins are available:
+Author: Muhammed Safwan (Safwan)
+Repo: woodspire
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🚀 Live demo
 
-## React Compiler
+(If you have deployed it, add your site link here — e.g. https://woodspire.example.com)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+🔧 Tech Stack
 
-## Expanding the ESLint configuration
+Frontend: React, Next.js (or React + CRA) — (update to what you actually used)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Backend: Node.js, Express
+
+Database: MongoDB (Atlas or local)
+
+Styling: Tailwind CSS / CSS (update to what you used)
+
+Other: TypeScript (optional), OOP practices, JWT for auth, Axios / fetch for API calls
+
+✨ Features
+
+Product listing, product detail pages
+
+Category filtering & search
+
+Add to cart & cart management
+
+Checkout flow (demo / integrate payment provider)
+
+User registration & login (JWT)
+
+Admin dashboard: add / edit / remove products (if implemented)
+
+Responsive and mobile-friendly layout
+
+📁 Repository structure (example)
+woodspire/
+├─ backend/
+│  ├─ controllers/
+│  ├─ models/
+│  ├─ routes/
+│  ├─ seeder/
+│  ├─ server.js (or index.js)
+│  └─ package.json
+├─ frontend/
+│  ├─ components/
+│  ├─ pages/ (or src/)
+│  ├─ public/
+│  └─ package.json
+└─ README.md
+
+
+Adjust the structure above if your repo is organized differently.
+
+🤝 Contributing
+
+If you want to accept contributions, add a short CONTRIBUTING.md or include these lines here:
+
+Fork the repo → create branch → make changes → open PR.
+
+Describe any coding standards or linting rules you want contributors to follow.
+
+📝 License
+
+Add a license file if you want (e.g., MIT). Example:
+
+MIT License
+© 2025 Muhammed Safwan
+
+📫 Contact
+
+Muhammed Safwan — reach me at: safuwanfazz@gmail.com
+
+Open to feedback, collaborations and improvements.
